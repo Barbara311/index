@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.template {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background: #2c3e50;
+    color: white;
+    padding: 15px;
+    border-radius: 6px 6px 0 0;
+    margin: -20px -20px 20px -20px;
+}
+
+.section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f7f9fc;
+    border-radius: 4px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.matrix-2x2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.matrix-cell {
+    border: 1px solid #ddd;
+    padding: 15px;
+    background: white;
+    border-radius: 4px;
+}
+
+.evaluation-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.rating-scale {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.rating-item {
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.rating-item:hover {
+    background: #e0e0e0;
+}
+
+.selected {
+    background: #3498db;
+    color: white;
+}
+</style>
+</head>
+<body>
+
+<div class="template">
+    <div class="header">
+        <h2>KI Use Case Analyse</h2>
+    </div>
+
+    <div class="section">
+        <h3>1. Use Case Identifikation</h3>
+        <input type="text" class="input-field" placeholder="Titel des Use Cases">
+        <textarea class="input-field" rows="3" placeholder="Kurzbeschreibung des Use Cases"></textarea>
+    </div>
+
+    <div class="section">
+        <h3>2. Prozessanalyse</h3>
+        <div class="matrix-2x2">
+            <div class="matrix-cell">
+                <h4>Ist-Prozess</h4>
+                <textarea class="input-field" rows="3" placeholder="Beschreibung des aktuellen Prozesses"></textarea>
+                <p>Durchlaufzeit: <input type="text" class="input-field"></p>
+                <p>Ressourceneinsatz: <input type="text" class="input-field"></p>
+            </div>
+            <div class="matrix-cell">
+                <h4>Soll-Prozess mit KI</h4>
+                <textarea class="input-field" rows="3" placeholder="Beschreibung des optimierten Prozesses"></textarea>
+                <p>Erwartete Durchlaufzeit: <input type="text" class="input-field"></p>
+                <p>Erwarteter Ressourceneinsatz: <input type="text" class="input-field"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>3. Potenzialanalyse</h3>
+        <div class="evaluation-grid">
+            <div class="matrix-cell">
+                <h4>Automatisierungspotenzial</h4>
+                <div class="rating-scale">
+                    <div class="rating-item">Niedrig</div>
+                    <div class="rating-item">Mittel</div>
+                    <div class="rating-item selected">Hoch</div>
+                </div>
+            </div>
+            <div class="matrix-cell">
+                <h4>Komplexitätsreduktion</h4>
+                <div class="rating-scale">
+                    <div class="rating-item">Niedrig</div>
+                    <div class="rating-item selected">Mittel</div>
+                    <div class="rating-item">Hoch</div>
+                </div>
+            </div>
+            <div class="matrix-cell">
+                <h4>Effizienzsteigerung</h4>
+                <div class="rating-scale">
+                    <div class="rating-item">Niedrig</div>
+                    <div class="rating-item">Mittel</div>
+                    <div class="rating-item selected">Hoch</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>4. Umsetzungsanalyse</h3>
+        <div class="matrix-2x2">
+            <div class="matrix-cell">
+                <h4>Technische Voraussetzungen</h4>
+                <textarea class="input-field" rows="3" placeholder="Benötigte technische Infrastruktur"></textarea>
+                <div class="rating-scale">
+                    <div class="rating-item">Vorhanden</div>
+                    <div class="rating-item selected">Teilweise</div>
+                    <div class="rating-item">Nicht vorhanden</div>
+                </div>
+            </div>
+            <div class="matrix-cell">
+                <h4>Organisatorische Voraussetzungen</h4>
+                <textarea class="input-field" rows="3" placeholder="Benötigte organisatorische Änderungen"></textarea>
+                <div class="rating-scale">
+                    <div class="rating-item">Vorhanden</div>
+                    <div class="rating-item selected">Teilweise</div>
+                    <div class="rating-item">Nicht vorhanden</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>5. Business Case</h3>
+        <div class="matrix-2x2">
+            <div class="matrix-cell">
+                <h4>Erwarteter Nutzen</h4>
+                <textarea class="input-field" rows="3" placeholder="Quantitativer und qualitativer Nutzen"></textarea>
+                <p>ROI-Schätzung: <input type="text" class="input-field"></p>
+            </div>
+            <div class="matrix-cell">
+                <h4>Aufwandsschätzung</h4>
+                <textarea class="input-field" rows="3" placeholder="Implementierungsaufwand"></textarea>
+                <p>Budget-Schätzung: <input type="text" class="input-field"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>6. Priorisierung</h3>
+        <div class="matrix-2x2">
+            <div class="matrix-cell">
+                <h4>Implementierungskomplexität</h4>
+                <div class="rating-scale">
+                    <div class="rating-item">Niedrig</div>
+                    <div class="rating-item selected">Mittel</div>
+                    <div class="rating-item">Hoch</div>
+                </div>
+            </div>
+            <div class="matrix-cell">
+                <h4>Business Impact</h4>
+                <div class="rating-scale">
+                    <div class="rating-item">Niedrig</div>
+                    <div class="rating-item">Mittel</div>
+                    <div class="rating-item selected">Hoch</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
